@@ -13,11 +13,17 @@ Allocate one adress to a unique address.
 |---|---|
 |E0|10.1.1.1|
 |S0|192.168.1.1|
-```mermaid
 
-graph LR
-A[PC - 10.1.1.2]-- 10.1.1.2 >--- B((e0_Router_s0))
-B-- 192.168.1.2 > --- C{Internet}
+```sequence
+Alice->Bob: Hello Bob, how are you?
+Note right of Bob: Bob thinks
+Bob-->Alice: I am good thanks!
+```
+
+```mermaid
+graph LR;
+  A[PC - 10.1.1.2]-- 10.1.1.2 >--- B((e0_Router_s0));
+  B-- 192.168.1.2 > --- C{Internet};
 ```
 
 ```
@@ -71,7 +77,7 @@ Router(config)# access-list 42 permit 10.1.0.0 0.0.255.255
 First line : Give a range of addresses to the router. It could dynamically use one address from 179.9.8.80 to 179.9.8.95.
 
 # PAT
-**P**ort **A**ddress **T**ranslation, alias Port Fowarding
+**P**ort **A**ddress **T**ranslation
 
 ## Example
 
